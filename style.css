@@ -453,3 +453,113 @@ body {
     height: auto !important;
   }
 }
+/* ==========================================================================
+   CÓDIGO DE ADAPTACIÓN PARA CELULARES (RESPONSIVE)
+   ========================================================================== */
+@media (max-width: 900px) {
+    /* Cambia la distribución de horizontal a vertical */
+    .main-layout {
+        flex-direction: column;
+        gap: 15px;
+        padding: 10px;
+        width: 100vw;
+        align-items: center;
+    }
+
+    /* Pone la barra de controles arriba, horizontal y estirada */
+    .sidebar {
+        flex-direction: row;
+        flex-wrap: wrap;
+        min-width: 95%;
+        justify-content: center;
+        padding: 10px;
+    }
+
+    .sidebar-title {
+        width: 100%; /* El título se queda arriba de los botones de la barra */
+        margin-bottom: 5px;
+    }
+
+    .nav-btn {
+        flex: 1;
+        min-width: 100px;
+        font-size: 0.8rem;
+        padding: 8px 4px;
+    }
+
+    /* FLEXIBILIZA EL TABLERO (El causante del error) */
+    .board-panel {
+        width: 95vw !important; /* Usa el 95% del ancho de la pantalla del celular */
+        min-width: 0 !important;
+        min-height: auto !important;
+        padding: 10px;
+        border-width: 4px; /* Achica los bordes gruesos */
+        outline-width: 2px;
+    }
+
+    .board-header-title {
+        font-size: 0.95rem;
+        margin-bottom: 8px;
+    }
+
+    /* Ajusta las filas de las respuestas para que no queden gigantes */
+    .board-row {
+        height: 45px; /* Filas un poco más delgadas para que entren bien */
+    }
+
+    .row-closed {
+        font-size: 1.5rem;
+    }
+
+    .answer-text {
+        font-size: 0.95rem;
+        padding-left: 10px;
+    }
+
+    .answer-points {
+        width: 50px;
+        font-size: 1.2rem;
+    }
+
+    /* AJUSTE PARA EL MODO DINERO RÁPIDO */
+    .fast-header-cols {
+        gap: 5px;
+    }
+
+    .fast-col-title {
+        font-size: 0.75rem;
+    }
+
+    .fast-row {
+        gap: 8px;
+    }
+
+    .fast-cell {
+        padding: 2px 2px 2px 6px;
+    }
+
+    .fast-input-text {
+        font-size: 0.8rem;
+    }
+
+    .fast-score-btn {
+        width: 30px;
+        height: 30px;
+        font-size: 0.9rem;
+    }
+
+    /* Marcador de puntaje total */
+    .total-score-box {
+        padding: 4px 20px;
+        min-width: 120px;
+    }
+
+    #total-score {
+        font-size: 2rem;
+    }
+
+    /* Cruces de error grandes */
+    .neon-cross {
+        font-size: 4rem;
+    }
+}
