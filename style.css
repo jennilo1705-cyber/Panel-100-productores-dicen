@@ -421,3 +421,35 @@ body {
 .audio-input-label input {
     display: none;
 }
+/* --- CÓDIGO ESPECIAL PARA CELULARES --- */
+@media (max-width: 768px) {
+  /* Evita que la página tenga scroll horizontal y rompa el diseño */
+  html, body {
+    width: 100%;
+    overflow-x: hidden;
+    font-size: 14px; /* Achica un poco el texto general */
+  }
+
+  /* Si tienes un contenedor principal, obligamos a que use todo el ancho disponible */
+  .container, .contenedor, main, section, body > div {
+    width: 90% !important;
+    max-width: 100% !important;
+    margin: 10px auto !important;
+    padding: 10px !important;
+    box-sizing: border-box;
+  }
+
+  /* Si usabas columnas una al lado de la otra, las ponemos una abajo de la otra */
+  .row, .flex, .grid, .panel {
+    display: flex !important;
+    flex-direction: column !important;
+    width: 100% !important;
+  }
+
+  /* Achica las imágenes o cajas de respuestas de "100 Argentinos dicen" */
+  img, button, .respuesta, .caja {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+  }
+}
