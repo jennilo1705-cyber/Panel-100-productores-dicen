@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>100 Argentinos Dicen - Juego Completo</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="background-decor"></div>
+
+    <div class="main-layout">
+
+        <!-- BARRA LATERAL IZQUIERDA: Dinero Rápido -->
+        <div class="sidebar sidebar-left">
+            <span class="sidebar-title">⚡ DINERO RÁPIDO</span>
+            <button class="nav-btn fast-money-btn" onclick="switchView('fast1')">Dinero Rápido 1</button>
+            <button class="nav-btn fast-money-btn" onclick="switchView('fast2')">Dinero Rápido 2</button>
+        </div>
+
+        <!-- CONTENEDOR CENTRAL: Paneles del Juego -->
+        <div class="game-container">
+            
+            <!-- MARCADOR TOTAL ARRIBA (Para rondas normales) -->
+            <div class="total-score-box" id="main-score-box">
+                <span id="total-score">0</span>
+            </div>
+
+            <!-- PANEL REGULAR (Preguntas 1 a 7) -->
+            <div class="board-panel" id="normal-panel">
+                <div class="board-header-title" id="round-title">RONDA 1</div>
+                <div class="board-grid" id="board-grid">
+                    <!-- Respuestas cargadas con JS -->
+                </div>
+
+                <!-- Overlay Cruz Multi-X (1, 2 o 3 X) -->
+                <div class="cross-overlay" id="cross-overlay">
+                    <div class="neon-cross-container" id="cross-container">
+                        <!-- Las cruces ❌ se insertan dinámicamente -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- PANEL DINERO RÁPIDO (2 COLUMNAS LADO A LADO) -->
+            <div class="board-panel fast-money-panel" id="fast-money-panel" style="display: none;">
+                <div class="fast-title" id="fast-panel-title">DINERO RÁPIDO</div>
+                
+                <div class="fast-header-cols">
+                    <div class="fast-col-title">PARTICIPANTE 1</div>
+                    <div class="fast-col-title">PARTICIPANTE 2</div>
+                </div>
+
+                <div class="fast-grid" id="fast-grid">
+                    <!-- 5 Filas dobles generadas con JS -->
+                </div>
+
+                <div class="fast-total-row">
+                    <span>TOTAL ACUMULADO:</span>
+                    <span id="fast-total-score">0</span>
+                </div>
+
+                <!-- Overlay Cruz para Dinero Rápido -->
+                <div class="cross-overlay" id="fast-cross-overlay">
+                    <div class="neon-cross-container">
+                        <span class="neon-cross">❌</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CONTROLES INFERIORES -->
+            <div class="controls-container">
+                <button class="btn-cross" id="btn-cross-trigger">❌ Error (Cruz)</button>
+                <button class="btn-reset" id="btn-reset">🔄 Reiniciar Panel</button>
+            </div>
+
+            <!-- PANEL DE CARGA DE AUDIO OPTATIVO -->
+            <div class="audio-custom-panel">
+                <span>🔊 Audios Personalizados (Opcional):</span>
+                <label class="audio-input-label">
+                    <span>Correcto MP3</span>
+                    <input type="file" id="audio-correct-input" accept="audio/*">
+                </label>
+                <label class="audio-input-label">
+                    <span>Error MP3</span>
+                    <input type="file" id="audio-error-input" accept="audio/*">
+                </label>
+            </div>
+
+        </div>
+    
+
+        <!-- BARRA LATERAL DERECHA: Rondas 1 a 7 -->
+        <div class="sidebar sidebar-right">
+            <span class="sidebar-title">🎯 RONDAS</span>
+            <button class="nav-btn round-btn active" onclick="switchView('round', 0)">Ronda 1</button>
+            <button class="nav-btn round-btn" onclick="switchView('round', 1)">Ronda 2</button>
+            <button class="nav-btn round-btn" onclick="switchView('round', 2)">Ronda 3</button>
+            <button class="nav-btn round-btn" onclick="switchView('round', 3)">Ronda 4</button>
+            <button class="nav-btn round-btn" onclick="switchView('round', 4)">Ronda 5</button>
+            <button class="nav-btn round-btn" onclick="switchView('round', 5)">Ronda 6</button>
+            <button class="nav-btn round-btn" onclick="switchView('round', 6)">Ronda 7</button>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
